@@ -10,14 +10,43 @@ def value(val):
     number = ["1","2","3","4","5","6","7","8","9","0"]
     operation = ["+","-","*","/"]
     global a
+    
     if val in number:
         a += str(val)
         display.config(text=a)   
-    else:
-        if val == "+":
-            
-            print(int(a)+int(a))
-
+        
+    elif val in operation:
+        a += str(val)
+        display.config(text=a)
+    elif val == "clear":
+        display.config(text="0")
+        a = ""      
+    elif val == "ans":
+        for i in operation:
+            if i == "+":
+                if i in a:
+                    result = a.split("+")
+                    add = int(result[0]) + int(result[1])
+                    display.config(text=f"{add}")
+            elif i == "-":
+                if i in a:
+                    result = a.split("-")
+                    sub = int(result[0]) - int(result[1])
+                    display.config(text=f"{sub}")
+            elif i == "*":
+                if i in a:
+                    result = a.split("*")
+                    mul = int(result[0]) * int(result[1])
+                    display.config(text=f"{mul}")
+            elif i == "/":
+                if i in a:
+                    result = a.split("/")
+                    div = int(result[0]) / int(result[1])
+                    display.config(text=f"{div}")
+        
+        
+        
+           
 display = Label(text="0",justify=LEFT, font=Font)
 display.grid(column=0, row=0, columnspan=4)
 
