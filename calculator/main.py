@@ -19,35 +19,39 @@ def value(val):
         a += str(val)
         display.config(text=a)
     elif val == "clear":
-        display.config(text="0")
+        display.config(text="0.0")
         a = ""      
     elif val == "ans":
         for i in operation:
             if i == "+":
                 if i in a:
                     result = a.split("+")
-                    add = int(result[0]) + int(result[1])
+                    add = float(result[0]) + float(result[1])
                     display.config(text=f"{add}")
+                    a = str(add)
             elif i == "-":
                 if i in a:
                     result = a.split("-")
-                    sub = int(result[0]) - int(result[1])
+                    sub = float(result[0]) - float(result[1])
                     display.config(text=f"{sub}")
+                    a = str(sub)
             elif i == "*":
                 if i in a:
                     result = a.split("*")
-                    mul = int(result[0]) * int(result[1])
+                    mul = float(result[0]) * float(result[1])
                     display.config(text=f"{mul}")
+                    a = str(mul)
             elif i == "/":
                 if i in a:
                     result = a.split("/")
-                    div = int(result[0]) / int(result[1])
+                    div = float(result[0]) / float(result[1])
                     display.config(text=f"{div}")
+                    a = str(div)
         
         
         
            
-display = Label(text="0",justify=LEFT, font=Font)
+display = Label(text="0.0",justify=LEFT, font=Font)
 display.grid(column=0, row=0, columnspan=4)
 
 no1 = Button(text="1", width=7, bg="black", fg="white", font =Font, command = lambda  m="1": value(m))
