@@ -47,9 +47,10 @@ def value(val):
                     div = float(result[0]) / float(result[1])
                     display.config(text=f"{div}")
                     a = str(div)
+      
         
-        
-        
+logo = PhotoImage(file="python\calculator\logo.png")
+Window.iconphoto(False, logo)       
            
 display = Label(text="0.0",justify=LEFT, font=Font)
 display.grid(column=0, row=0, columnspan=4)
