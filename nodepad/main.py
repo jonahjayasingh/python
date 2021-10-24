@@ -21,6 +21,7 @@ window.title("Notepad")
 window.minsize(500,500)
 # To create a menu
 menu = Menu(window)
+# To create sub menu
 file = Menu(menu, tearoff=0)
 file.add_command(label="New")
 file.add_command(label="open", command= open_file)
