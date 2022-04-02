@@ -4,7 +4,7 @@ import signup
 import login
 ui = Tk()  
 ui.geometry('720x720')
-logo_image = "F:\python\project\logo\download.jpg"
+logo_image = "logo/download.jpg"
 img = ImageTk.PhotoImage(Image.open(logo_image))
 logo = Label(ui, image= img).place(x=200, y =50)
 log_in = Button(text="Log in",fg= "black", bg="#ff8080", command= login.login).place(x = 350 , y= 350)
